@@ -1,0 +1,21 @@
+# 题目素材（防止泄露考题，不入库；运行 convert_tga.py 从本地生成）
+png/
+picture/
+
+# 中间产物 / 诊断图
+crop_*.png
+overlay_*.png
+outA_edge.png
+palette_left.png
+*_LEAKED_UNUSED.py
+dev_diag/
+
+# 临时与缓存
+__pycache__/
+*.pyc
+*.zip
+*.tga
+*.dga
+*.cf6
+结果包/
+成果包/
