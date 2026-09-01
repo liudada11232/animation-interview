@@ -60,9 +60,10 @@ def run(rough_path, out_path, K=5, black_lum=170):
     save_rgb(out,out_path); return out
 
 if __name__=="__main__":
-    src=r"D:\desktop\picture\KTK_04_246B\源文件\描原"
-    base=r"D:\desktop\mianshi\work\png\KTK_04_246B"
-    outdir=r"D:\desktop\mianshi\work\outA"; os.makedirs(outdir,exist_ok=True)
+    from paths import asset, data, out
+    src=asset("KTK_04_246B","源文件","描原")
+    base=data("KTK_04_246B")
+    outdir=out("outA"); os.makedirs(outdir,exist_ok=True)
     tot_f1=0
     for rough,refn in {"A1.jpg":"A0001","A2.jpg":"A0006","A3.jpg":"A0009"}.items():
         outp=os.path.join(outdir,refn+".png")

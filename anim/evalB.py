@@ -10,10 +10,11 @@ import numpy as np
 from io_utils import load_rgb, to_line_mask
 from scipy.ndimage import label as cc_label
 
-BASE = r"D:\desktop\mianshi\work\png\KTK_04_246B"
+from paths import data, out
+BASE = data("KTK_04_246B")
 SRC = os.path.join(BASE, "源文件", "中割")
 REF = os.path.join(BASE, "成品", "中割")
-OUT = r"D:\desktop\mianshi\work\outB"
+OUT = out("outB")
 frames = [f"A000{i}" for i in range(1, 10)]
 
 def line_intensity(img):

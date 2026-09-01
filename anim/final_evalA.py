@@ -5,9 +5,10 @@ sys.path.insert(0, os.path.dirname(__file__))
 import numpy as np
 from io_utils import load_rgb
 from metrics import precision_recall_f1, chamfer_distance, closed_region_stats
+from paths import data, out
 
-base=r"D:\desktop\mianshi\work\png\KTK_04_246B"
-outdir=r"D:\desktop\mianshi\work\outA"
+base=data("KTK_04_246B")
+outdir=out("outA")
 print("KTK_04 题A 描原 最终评测:")
 tot_f1=0
 for rn in ["A0001","A0006","A0009"]:

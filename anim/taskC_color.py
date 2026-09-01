@@ -85,17 +85,13 @@ def colorize(line_art):
     return out
 
 if __name__=="__main__":
-    BASE=r"D:\desktop\mianshi\work\png\KTK_04_246B"
+    from paths import data, out
+    BASE=data("KTK_04_246B")
     SRC=os.path.join(BASE,"源文件","上色")
-    OUT=r"D:\desktop\mianshi\work\outC_compliant"; os.makedirs(OUT,exist_ok=True)
+    OUT=out("outC"); os.makedirs(OUT,exist_ok=True)
     for i in range(1,10):
         f=f"A000{i}"
         a=load_rgb(os.path.join(SRC,f+".png"))
         rgb=colorize(a)
         save_rgb(rgb,os.path.join(OUT,f+".png"))
         print("compliant colorized",f)
-    # 同步到正式输出目录
-    import shutil
-    for i in range(1,10):
-        f=f"A000{i}"
-        shutil.copy2(os.path.join(OUT,f+".png"), os.path.join(r"D:\desktop\mianshi\work\outC",f+".png"))

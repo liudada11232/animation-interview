@@ -18,9 +18,10 @@ def interpolate(imgA, imgB, t, winsize=31, pyr=4):
     return snap_palette(out)
 
 if __name__=="__main__":
-    base=r"D:\desktop\mianshi\work\png\KTK_05_140"
+    from paths import data, out
+    base=data("KTK_05_140")
     refroot=os.path.join(base,"成品","中割")
-    outdir=r"D:\desktop\mianshi\work\outB5"; os.makedirs(outdir,exist_ok=True)
+    outdir=out("outB5"); os.makedirs(outdir,exist_ok=True)
     # A layer: A0001,A0005 keyframes come from 源文件/中割/A (legal input), fill A0002-A0004.
     srcroot=os.path.join(base,"源文件","中割")
     a1=load_rgb(os.path.join(srcroot,"A","A0001.png"))

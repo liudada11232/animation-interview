@@ -11,10 +11,11 @@ sys.path.insert(0, os.path.dirname(__file__))
 import numpy as np
 from io_utils import load_rgb
 
-BASE = r"D:\desktop\mianshi\work\png\KTK_04_246B"
+from paths import data, out
+BASE = data("KTK_04_246B")
 SRC = os.path.join(BASE, "源文件", "上色")
 REF = os.path.join(BASE, "成品", "上色")
-OUT = r"D:\desktop\mianshi\work\outC"   # 合规版产物（仅设定图色卡）
+OUT = out("outC")   # 合规版产物（仅设定图色卡）
 frames = [f"A000{i}" for i in range(1, 10)]
 
 def fill_mask(flat):

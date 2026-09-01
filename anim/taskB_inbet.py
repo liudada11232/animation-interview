@@ -73,9 +73,10 @@ def snap_palette(img):
     return PAL[idx].astype(np.uint8).reshape(img.shape)
 
 if __name__ == "__main__":
-    base = r"D:\desktop\mianshi\work\png\KTK_04_246B"
+    from paths import data, out
+    base = data("KTK_04_246B")
     src = os.path.join(base, "源文件", "中割")
-    outdir = r"D:\desktop\mianshi\work\outB"
+    outdir = out("outB")
     os.makedirs(outdir, exist_ok=True)
     def K(n): return load_rgb(os.path.join(src, n + ".png"))
     a1, a6, a9 = K("A0001"), K("A0006"), K("A0009")

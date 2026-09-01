@@ -42,9 +42,10 @@ def run(rough_path, out_path):
     save_rgb(out,out_path); return out
 
 if __name__=="__main__":
-    src=r"D:\desktop\mianshi\work\png\KTK_05_140\源文件\描原"
-    refroot=r"D:\desktop\mianshi\work\png\KTK_05_140\成品\描原"
-    outdir=r"D:\desktop\mianshi\work\outA5"; os.makedirs(outdir,exist_ok=True)
+    from paths import data, out
+    src=data("KTK_05_140","源文件","描原")
+    refroot=data("KTK_05_140","成品","描原")
+    outdir=out("outA5"); os.makedirs(outdir,exist_ok=True)
     # A layer
     for inp, refn in [("A0001","A0001"),("A0002","A0005")]:
         outp=os.path.join(outdir,"A_"+refn+".png")

@@ -9,10 +9,11 @@ from taskC_color import colorize
 from evalC import fill_mask
 
 if __name__=="__main__":
-    base=r"D:\desktop\mianshi\work\png\KTK_05_140"
+    from paths import data, out
+    base=data("KTK_05_140")
     src=os.path.join(base,"源文件","上色")
     refroot=os.path.join(base,"成品","上色")
-    outdir=r"D:\desktop\mianshi\work\outC5"; os.makedirs(outdir,exist_ok=True)
+    outdir=out("outC5"); os.makedirs(outdir,exist_ok=True)
     jobs=[("A","A0001"),("A","A0002"),("A","A0003"),("A","A0004"),("A","A0005"),
           ("B","B0001"),("B","B0002"),("B","B0003")]
     te=tp=tcn=tcd=tline=0
